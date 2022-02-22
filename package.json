@@ -2,11 +2,13 @@
   "name": "smartseal-authentication",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --mode development --open",
     "start": "node server.js",
     "watch": "webpack --watch",
     "build": "webpack",
+    "heroku-postbuild": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +30,7 @@
   },
   "dependencies": {
     "express": "^4.17.3",
-    "node": "^16.13.2"
+    "node": "^16.13.2",
+    "webpack-dev-server": "^4.7.4"
   }
 }

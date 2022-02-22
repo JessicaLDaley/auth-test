@@ -1,30 +1,14 @@
-const PORT = process.env.PORT || 3001;
-const fs = require('fs');
-const path = require('path');
 const express = require('express');
+const path = require('path');
+const port = process.env.PORT || 8080;
 const app = express();
 
-module.exports = {
-  mode: 'production',
-  entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.html$/i,
-        loader: 'html-loader',
-      },
-      {
-        test: /\.svg$/i,
-        use: 'raw-loader',
-      },
-    ],
-  }
-};
-app.listen(PORT, () => {
-  console.log(`API server now on port ${PORT}!`);
+// the __dirname is the current directory from where the script is running
+app.use(express.static(__dirname));
+
+// send the user to index html page inspite of the url
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'auth-page.html'));
 });
+
+app.listen(port);
