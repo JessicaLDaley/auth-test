@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --mode development --open",
     "start": "node server.js",
     "watch": "webpack --watch",
-    "heroku-postbuild": "--mode production",
+    "build": "webpack",
+    "heroku-postbuild": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,10 +30,7 @@
   },
   "dependencies": {
     "express": "^4.17.3",
-    "node": "^12.22.10",
+    "node": "^16.13.2",
     "webpack-dev-server": "^4.7.4"
-  },
-  "engines": {
-    "node": "12.22.10"
-}
+  }
 }
