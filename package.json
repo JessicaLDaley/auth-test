@@ -31,5 +31,8 @@
     "express": "^4.17.3",
     "node": "^12.22.10",
     "webpack-dev-server": "^4.7.4"
-  }
+  },
+  "engines": {
+    "node": "12.22.10"
+}
 }
