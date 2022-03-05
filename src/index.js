@@ -23,10 +23,7 @@ export class SmartSealAuth extends HTMLElement {
       this.toggleDescription();
     });
 
-    this.closeBtn = this.shadowRoot.querySelector('.btn-close');
-    this.closeBtn.addEventListener('click', () => {
-      this.hide();
-    });
+  
 
     let queryVar = 'pl'
 
@@ -61,7 +58,7 @@ export class SmartSealAuth extends HTMLElement {
 
   hide() {
     this.shadowRoot.querySelector('.auth-page-wrapper').style.display = 'none';
-    this.dispatchEvent( new CustomEvent( 'smartseal-close', { bubbles: true} ) );
+   
   }
 
   // Setters
@@ -178,46 +175,13 @@ export class SmartSealAuth extends HTMLElement {
 
   injectFont(){
     var css = `
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      @font-face {
-        font-family: 'Roboto Mono';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSh0me8iUI0.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      @font-face {
-        font-family: 'Roboto Mono';
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSh0me8iUI0.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
+
     `;
     if(!document.getElementById('smartSealFont')){
       var head = document.head || document.getElementsByTagName('head')[0],
         style = document.createElement('style');
       style.id = 'smartSealFont';
-      style.type = 'text/css';
-      style.innerText = css;
-      head.appendChild(style);
+     
     }
   }
 }
