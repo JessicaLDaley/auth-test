@@ -24,10 +24,6 @@
             (this.description = this.shadowRoot.querySelector(".description")),
                 this.description.addEventListener("click", () => {
                     this.toggleDescription();
-                }),
-                (this.closeBtn = this.shadowRoot.querySelector(".btn-close")),
-                this.closeBtn.addEventListener("click", () => {
-                    this.hide();
                 });
             var e = { useragent: "useragent string goes here", ip_address: "111.111.111.111", url_payload: this.getQueryVariable("pl") };
             e && e.url_payload && this.getTagData(e);
